@@ -31,11 +31,11 @@ const Page = () => {
             </p>
           </div>
         </div>
-        <div className="grid w-full grid-cols-3 gap-8">
+        <div className="grid w-full grid-cols-1 lg:grid-cols-3 gap-8">
           <div
             role="button"
             onClick={() => router.push("/register/create?type=farmer")}
-            className="group hover:border-primary mx-auto w-full cursor-pointer space-y-2 border-2 border-transparent transition-all duration-200 ease-in-out hover:rounded-lg hover:border-2"
+            className="group hover:border-primary mx-auto w-full cursor-pointer space-y-2 border-2 border-transparent transition-all max-lg:max-w-[250px] duration-200 ease-in-out hover:rounded-lg hover:border-2"
           >
             <p className="text-center text-lg">Farmer</p>
             <div className="flex items-center justify-center overflow-hidden">
@@ -51,7 +51,7 @@ const Page = () => {
           <div
             role="button"
             onClick={() => router.push("/register/create?type=investor")}
-            className="group hover:border-primary mx-auto w-full cursor-pointer space-y-2 border-2 border-transparent transition-all duration-200 ease-in-out hover:rounded-lg hover:border-2"
+            className="group hover:border-primary mx-auto w-full cursor-pointer space-y-2 border-2 border-transparent transition-all max-lg:max-w-[250px] duration-200 ease-in-out hover:rounded-lg hover:border-2"
           >
             <p className="text-center text-lg">Investor</p>
             <div className="flex items-center justify-center overflow-hidden">
@@ -67,7 +67,7 @@ const Page = () => {
           <div
             role="button"
             onClick={() => router.push("/register/create?type=agent")}
-            className="group hover:border-primary mx-auto w-full cursor-pointer space-y-2 border-2 border-transparent transition-all duration-200 ease-in-out hover:rounded-lg hover:border-2"
+            className="group hover:border-primary mx-auto w-full cursor-pointer space-y-2 border-2 border-transparent transition-all max-lg:max-w-[250px] duration-200 ease-in-out hover:rounded-lg hover:border-2"
           >
             <p className="text-center text-lg">Agent</p>
             <div className="flex items-center justify-center overflow-hidden">
