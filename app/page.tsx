@@ -71,9 +71,11 @@ export default function Page() {
             reliable buyers,FoodBank offers tailored loans and investment
             opportunities to grow sustainable agriculture.
           </p>
-          <Button type="primary" size="large" className="text-sm">
-            Join Foodbank
-          </Button>
+          <Link href="/register">
+            <Button type="primary" size="large" className="text-sm">
+              Join Foodbank
+            </Button>
+          </Link>
         </Container>
       </section>
       <section className="py-12">
@@ -101,9 +103,11 @@ export default function Page() {
                   tracking of repayments/investments.
                 </p>
               </div>
-              <Button type="primary" size="large" className="text-sm">
-                Join Foodbank
-              </Button>
+              <Link href="/register">
+                <Button type="primary" size="large" className="text-sm">
+                  Join Foodbank
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="space-y-4 rounded-md border border-gray-200 p-8">
@@ -230,9 +234,11 @@ export default function Page() {
                   to enjoy a smooth, trustworthy process.
                 </p>
               </div>
-              <Button type="primary" size="large" className="text-sm">
-                Join Foodbank
-              </Button>
+              <Link href="/register">
+                <Button type="primary" size="large" className="text-sm">
+                  Join Foodbank
+                </Button>
+              </Link>
             </div>
           </div>
         </Container>

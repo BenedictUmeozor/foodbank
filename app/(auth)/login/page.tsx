@@ -4,13 +4,16 @@ import Container from "@/components/layout/Container";
 import { Button, Form, Input } from "antd";
 import Image from "next/image";
 import Link from "next/link";
+import ReactDOM from "react-dom";
 
 export default function Page() {
   const onFinish = () => {};
 
+  ReactDOM.preload("/images/login.webp", { as: "image" });
+
   return (
-    <main className="lg:grid lg:grid-cols-[1.15fr_0.85fr] gap-y-8">
-      <div className="flex items-center justify-center max-lg:hidden lg:order-2 h-screen">
+    <main className="gap-y-8 lg:grid lg:grid-cols-[1.15fr_0.85fr]">
+      <div className="flex h-screen items-center justify-center max-lg:hidden lg:order-2">
         <Image
           src="/images/login.webp"
           alt="Login"
@@ -19,8 +22,8 @@ export default function Page() {
           className="h-full w-full max-w-full object-cover"
         />
       </div>
-      <Container className="flex items-center justify-center lg:order-1 max-lg:min-h-screen">
-        <div className="w-full lg:max-w-md space-y-4">
+      <Container className="flex items-center justify-center max-lg:min-h-screen lg:order-1">
+        <div className="w-full space-y-4 lg:max-w-md">
           <Form
             onFinish={onFinish}
             autoComplete="off"
