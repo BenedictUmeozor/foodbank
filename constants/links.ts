@@ -4,12 +4,16 @@ export const NAV_LINKS = [
     href: "/",
   },
   {
-    name: "Loan Options",
-    href: "/loan-options",
+    name: "Loan",
+    href: "/loan",
   },
   {
-    name: "How it Works",
-    href: "/how-it-works",
+    name: "Investment",
+    href: "/investment",
+  },
+  {
+    name: "Contact Us",
+    href: "/contact",
   },
   {
     name: "About Us",
