@@ -17,7 +17,7 @@ import { Judson } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 
-export const judson = Judson({
+const judson = Judson({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
@@ -293,7 +293,7 @@ export default function Page() {
               </div>
             </div>
           </div>
-          <div className="w-full bg-white/90 h-[1px]" />
+          <div className="h-[1px] w-full bg-white/90" />
           <div className="flex items-center justify-between">
             <Link href="#">Privacy Policy</Link>
             <p>&copy; Copyright 2025. Foodbank. All Right Reserved</p>
