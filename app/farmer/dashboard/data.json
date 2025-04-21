@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "date": "17th Feb 2025",
+        "description": "Loan request",
+        "amount": 200000,
+        "status": "Processing"
+    },
+    {
+        "id": 2,
+        "date": "1st Feb 2025",
+        "description": "Loan repayment",
+        "amount": 70000,
+        "status": "Success"
+    },
+    {
+        "id": 3,
+        "date": "12 Jan 2025",
+        "description": "Loan request",
+        "amount": 70000,
+        "status": "Approved"
+    },
+    {
+        "id": 4,
+        "date": "17th Feb 2025",
+        "description": "Loan request",
+        "amount": 70000,
+        "status": "Processing"
+    },
+    {
+        "id": 5,
+        "date": "17th Feb 2025",
+        "description": "Loan repayment",
+        "amount": 70000,
+        "status": "Success"
+    },
+    {
+        "id": 6,
+        "date": "17th Feb 2025",
+        "description": "Loan request",
+        "amount": 70000,
+        "status": "Processing"
+    },
+    {
+        "id": 7,
+        "date": "17th Feb 2025",
+        "description": "Loan request",
+        "amount": 70000,
+        "status": "Declined"
+    },
+    {
+        "id": 8,
+        "date": "17th Feb 2025",
+        "description": "Loan request",
+        "amount": 70000,
+        "status": "Processing"
+    },
+    {
+        "id": 9,
+        "date": "17th Feb 2025",
+        "description": "Loan request",
+        "amount": 70000,
+        "status": "Processing"
+    },
+    {
+        "id": 10,
+        "date": "17th Feb 2025",
+        "description": "Loan request",
+        "amount": 70000,
+        "status": "Processing"
+    }
+]

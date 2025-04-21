@@ -6,4 +6,25 @@
   --color-primary: #4caf50;
   --color-primary-light: #c3e4c5;
   --color-dark: #0f2310;
+  --color-darklight: #374838;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+.no-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.antd-select-custom {
+  background-color: transparent !important;
+}
+.antd-select-custom .ant-select-selector {
+  background-color: transparent !important;
 }

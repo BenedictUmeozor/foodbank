@@ -1,0 +1,288 @@
+"use client";
+
+import { Button, TableProps, Tag } from "antd";
+import { AlertCircleIcon, CalendarIcon, CloudDownloadIcon } from "lucide-react";
+import { Table } from "antd";
+import data from "../dashboard/data.json";
+import clsx from "clsx";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  Cell, // Keep Cell for PieChart
+  Pie, // Keep Pie for PieChart
+  PieChart, // Keep PieChart
+} from "recharts";
+import Link from "next/link";
+
+const chartData = [
+  { name: "Total loan amount", value: 2000, color: "#DBEFDC" },
+  { name: "Total loan paid", value: 1000, color: "#4CAF50" },
+];
+
+const barChartData = [
+  { name: "Jan", value: 280000 },
+  { name: "Feb", value: 350000 },
+  { name: "Mar", value: 420000 },
+  { name: "Apr", value: 170000 },
+  { name: "May", value: 10000 },
+  { name: "Jun", value: 250000 },
+  { name: "Jul", value: 90000 },
+  { name: "Aug", value: 170000 },
+  { name: "Sep", value: 290000 },
+  { name: "Oct", value: 190000 },
+  { name: "Nov", value: 300000 },
+  { name: "Dec", value: 250000 },
+];
+
+// Formatter for Y-axis ticks
+const formatYAxis = (tickItem: number) => {
+  return `${tickItem / 1000}k`;
+};
+
+export default function Page() {
+  const columns: TableProps<(typeof data)[0]>["columns"] = [
+    {
+      title: "Date",
+      dataIndex: "date",
+      key: "date",
+      className: "text-gray-700",
+    },
+    {
+      title: "Description",
+      dataIndex: "description",
+      key: "description",
+      className: "text-gray-700",
+    },
+    {
+      title: "Amount",
+      dataIndex: "amount",
+      key: "amount",
+      className: "text-gray-700",
+    },
+    {
+      title: "Status",
+      dataIndex: "status",
+      key: "status",
+      render: (status: string) => (
+        <Tag
+          className={clsx(
+            status.toLowerCase() === "processing"
+              ? "bg-[#F6F2DA]"
+              : status.toLowerCase() === "declined"
+                ? "bg-[#F6DADA]"
+                : "bg-[#DBEFDC]",
+            status.toLowerCase() === "processing"
+              ? "text-[#D4BF48]"
+              : status.toLowerCase() === "declined"
+                ? "text-[#D44848]"
+                : `text-[#4CAF50]`,
+          )}
+        >
+          {status}
+        </Tag>
+      ),
+    },
+  ];
+
+  return (
+    <div className="space-y-6">
+      <h1 className="text-xl">Welcome Cy</h1>
+      <div className="grid grid-cols-[1fr_300px] gap-8">
+        <section className="space-y-8">
+          <div className="grid grid-cols-3 gap-4">
+            <div className="space-y-3 rounded border-gray-200 bg-white p-3 shadow">
+              <div className="flex items-center gap-2">
+                <span className="text-xs">Total loan collected</span>
+                <AlertCircleIcon className="h-3 w-3 text-green-500" />
+              </div>
+              <p className="text-2xl font-bold">₦2,000,000</p>
+            </div>
+
+            <div className="space-y-3 rounded border-gray-200 bg-white p-3 shadow">
+              <div className="flex items-center gap-2">
+                <span className="text-xs">Total amount to pay</span>
+                <AlertCircleIcon className="h-3 w-3 text-green-500" />
+              </div>
+              <p className="text-2xl font-bold">₦2,200,000</p>
+              <div className="relative h-1 rounded bg-gray-200">
+                <div className="bg-primary absolute top-0 left-0 h-full w-1/2" />
+              </div>
+              <p className="text-xs">
+                Amount paid: <span className="font-bold"></span>₦1,000,000
+              </p>
+            </div>
+
+            <div className="space-y-3 rounded border-gray-200 bg-white p-3 shadow">
+              <div className="flex items-center gap-2">
+                <span className="text-xs">Upcoming repayment</span>
+                <CalendarIcon className="h-3 w-3 text-green-500" />
+              </div>
+              <p className="text-2xl font-bold">₦50,000</p>
+              <p className="text-xs">Due date 7th March 2025</p>
+            </div>
+
+            <div className="space-y-3 rounded border-gray-200 bg-white p-3 shadow">
+              <div className="flex items-center gap-2">
+                <span className="text-xs">Outstanding payments</span>
+                <AlertCircleIcon className="h-3 w-3 text-red-500" />
+              </div>
+              <p className="text-2xl font-bold">₦20,000</p>
+            </div>
+
+            <div className="space-y-3 rounded border-gray-200 bg-white p-3 shadow">
+              <div className="flex items-center gap-2">
+                <span className="text-xs">New application awaiting review</span>
+              </div>
+              <p className="text-2xl font-bold">₦1,000,000</p>
+              <p className="text-xs">
+                Total amount <span className="font-bold">₦1,000,000</span>
+              </p>
+            </div>
+
+            <div className="space-y-3 rounded border-gray-200 bg-white p-3 shadow">
+              <div className="flex items-center gap-2">
+                <span className="text-xs">New application awaiting review</span>
+              </div>
+              <p className="text-2xl font-bold">₦1,000,000</p>
+              <p className="text-xs">
+                Total amount <span className="font-bold">₦1,000,000</span>
+              </p>
+            </div>
+          </div>
+          <section className="space-y-3">
+            <header className="flex items-center justify-between">
+              <h3 className="text-lg text-gray-700">Loan Analysis</h3>
+            </header>
+            <div className="rounded border border-gray-200 bg-white p-4 shadow">
+              <ResponsiveContainer width="100%" height={300}>
+                <BarChart
+                  data={barChartData}
+                  margin={{
+                    top: 5,
+                    right: 30,
+                    left: 20,
+                    bottom: 5,
+                  }}
+                  barGap={10}
+                  barCategoryGap="20%"
+                >
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                  <XAxis dataKey="name" axisLine={false} tickLine={false} />
+                  <YAxis
+                    axisLine={false}
+                    tickLine={false}
+                    tickFormatter={formatYAxis}
+                    domain={[0, 450000]}
+                    allowDataOverflow={true}
+                  />
+                  <Tooltip
+                    cursor={{ fill: "transparent" }}
+                    formatter={(value: number) => [
+                      `₦${value.toLocaleString()}`,
+                      "Amount",
+                    ]}
+                  />
+                  <Bar dataKey="value" fill="#4CAF50" radius={[4, 4, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </section>
+          <div className="space-y-3">
+            <header className="flex items-center justify-between">
+              <h3 className="text-lg text-gray-700">Loan Summary</h3>
+              <Button
+                type="text"
+                size="large"
+                className="text-lg text-gray-700"
+                iconPosition="end"
+                icon={<CloudDownloadIcon className="text-primary h-5 w-5" />}
+              >
+                Download Statement
+              </Button>
+            </header>
+            <Table
+              dataSource={data}
+              columns={columns}
+              rowKey={(record) => record.id}
+              components={{
+                header: {
+                  cell: (props) => {
+                    return <th {...props} className="text-gray-500" />;
+                  },
+                },
+              }}
+            />
+          </div>
+        </section>
+
+        <aside className="text-darklight space-y-8">
+          <div className="space-y-4 rounded border-gray-200 bg-white p-3 shadow">
+            <h6 className="text-darklight text-center text-xl font-medium">
+              Loan Analysis
+            </h6>
+            <div className="flex items-center justify-center">
+              <ResponsiveContainer width={200} height={200}>
+                <PieChart>
+                  <Pie
+                    data={chartData}
+                    cx="50%"
+                    cy="50%"
+                    innerRadius={60}
+                    outerRadius={80}
+                    dataKey="value"
+                    startAngle={90}
+                    endAngle={450}
+                  >
+                    {chartData.map((entry, index) => (
+                      <Cell
+                        key={`cell-${index}`}
+                        fill={entry.color}
+                        stroke="none"
+                      />
+                    ))}
+                  </Pie>
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+            <div className="flex items-center justify-between">
+              <div className="space-y-1">
+                <div className="flex items-center gap-0.5 text-xs">
+                  <div className="h-2 w-2 bg-[#DBEFDC]" />
+                  <span className="text-darklight text-xs">
+                    Total loan amount
+                  </span>
+                </div>
+                <span className="font-bold">₦2,000,000</span>
+              </div>
+              <div className="space-y-1">
+                <div className="flex items-center gap-0.5 text-xs">
+                  <div className="h-2 w-2 bg-[#4CAF50]" />
+                  <span className="text-darklight text-xs">
+                    Total loan paid
+                  </span>
+                </div>
+                <span className="font-bold">₦1,000,000</span>
+              </div>
+            </div>
+          </div>
+          <div className="space-y-4 rounded border-gray-200 bg-white p-6 shadow">
+            <h4 className="text-xl font-medium">Hi, Cy</h4>
+            <p className="w-56 text-sm">
+              Need financial help for your farming business?
+            </p>
+            <Link href="/farmer/loans/apply">
+              <Button size="large" type="primary" className="w-44 text-base">
+                Apply for a loan
+              </Button>
+            </Link>
+          </div>
+        </aside>
+      </div>
+    </div>
+  );
+}

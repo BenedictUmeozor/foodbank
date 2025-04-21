@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Eligibility",
+    "description": "Applicants must be registered farmers with a verified profile and valid identification."
+  },
+  {
+    "id": 2,
+    "title": "Use of Funds",
+    "description": "Loans must be used strictly for agricultural purposes, including but not limited to equipment purchase, farm input, labor, and expansion."
+  },
+  {
+    "id": 3,
+    "title": "Repayment Terms",
+    "description": "Repayments must be made according to the agreed schedule. Failure to repay on time may result in penalties or disqualification from future funding."
+  },
+  {
+    "id": 4,
+    "title": "Interest Rates",
+    "description": "All loans are subject to a fixed or variable interest rate, clearly stated before loan approval."
+  },
+  {
+    "id": 5,
+    "title": "Loan Approval",
+    "description": "Approval is based on creditworthiness, farming history, and availability of funds. Submission of an application does not guarantee approval."
+  },
+  {
+    "id": 6,
+    "title": "Monitoring & Reporting",
+    "description": "FoodBank reserves the right to monitor fund usage. Beneficiaries may be required to submit periodic reports or proof of farm activity."
+  },
+  {
+    "id": 7,
+    "title": "Default Policy",
+    "description": "In the event of a default, FoodBank may initiate recovery procedures, including legal action or fund deductions from future earnings."
+  },
+  {
+    "id": 8,
+    "title": "Data Privacy",
+    "description": "All information provided will be handled in accordance with our privacy policy and used solely for assessing and managing the loan process."
+  },
+  {
+    "id": 9,
+    "title": "Amendments",
+    "description": "FoodBank reserves the right to modify these terms at any time. Notice will be given before changes take effect."
+  },
+  {
+    "id": 10,
+    "title": "Agreement",
+    "description": "By submitting a loan application, you agree to these terms and confirm that all information provided is accurate and truthful."
+  }
+]
